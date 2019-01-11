@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jquery属性和内容</title>
+    <script src="jquery.js"></script>
+    <link rel="stylesheet" type="text/css" href="main.css"/>
+</head>
+<body>
+<div>
+    <div id="box"> <!--//attr()方法用于获取设置属性的值。-->
+    <a href="www.shuaijian.top">帅健网站</a>
+    <button id="a_" >获取网址</button>
+    <button id="a__">改变网址为百度</button>
+    <button id="a___">删除网址链接</button>
+    </div>
+</div>
+
+<script type="text/javascript">
+
+
+    //attr()方法用于获取设置属性的值。
+    $("#a_").click(function () {
+        alert($("a").attr("href"));
+});
+    $("#a__").click(function () {
+        $("a").attr("href","www.baidu.com");
+        alert("改变成功，请点击获取网址查看");
+});
+    $("#a___").click(function () {
+        var x = $("a").removeAttr("href");
+        if(x) {
+            alert("网址链接已删除");
+        }
+    });
+
+
+
+</script>
+</body>
+</html>

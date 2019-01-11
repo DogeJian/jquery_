@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jquery添加内容</title>
+    <script src="jquery.js"></script>
+    <link rel="stylesheet" type="text/css" href="main.css"/>
+</head>
+<body>
+<div>
+<!--
+    append()在所选元素的末尾插入内容。
+
+    prepend()在所选元素的开头插入内容。
+
+    after()插入所选元素后的内容。
+
+    before()在所选元素之前插入内容。
+
+    可以通过使用逗号分隔来指定多个元素作为before()，after()，append()，prepend()方法的参数：$("#id").append(var1,var2,var3)
+-->
+    <p id="p1">（第一个P标签）</p>
+    <button id="p_">点我查看jquery添加的内容</button>
+
+</div>
+
+<script type="text/javascript">
+    $("#p_").click(function(){
+        $("#p1").append("(append()添加的文字)");
+        $("#p1").prepend("(prepend()添加的文字)");
+        $("#p1").before("(before添加的文字)");
+        $("#p1").after("<div>(after添加的盒子1)</div>","<div>(after添加的盒子2)</div>");
+
+    });
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jquery的val()属性</title>
+    <script src="jquery.js"></script>
+    <link rel="stylesheet" type="text/css" href="main.css"/>
+</head>
+<body>
+<div>
+    <input  type="text" value="jquery的val()方法">
+    <button id="input_">点击获取输入框中内容</button>
+    <button id="input__">点击更改输入框中内容为：帅健666</button>
+</div>
+
+<script type="text/javascript">
+//用来获取和设置表单域的值
+    $("#input_").click(function () {
+        alert($("input").val());
+    });
+    $("#input__").click(function () {
+    $("input").val("帅健666");
+});
+
+
+
+</script>
+</body>
+</html>

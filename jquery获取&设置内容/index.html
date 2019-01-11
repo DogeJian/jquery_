@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jquery获取&设置内容</title>
+    <script src="jquery.js"></script>
+    <link rel="stylesheet" type="text/css" href="main.css"/>
+</head>
+<body>
+<div>
+    <p>好好学习呐<a>天天向上</a></p>
+    <button id="p_">查看html方法与text方法</button>
+    <button id="p__">点我设置内容为：帅健666</button>
+</div>
+
+<script type="text/javascript">
+    $("#p_").click(function () {
+        alert("html方法显示为："+$("p").html());
+        alert("text方法显示为："+$("p").text());
+    });
+    $("#p__").click(function () {
+        $("p").text("帅健666");//设置内容包含其他标签需要使用text方法
+        alert("设置成功：内容包含其他标签需要使用text方法");
+    });
+
+
+
+
+
+</script>
+</body>
+</html>
