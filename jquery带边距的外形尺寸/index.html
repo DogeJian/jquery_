@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jquery带边距的外形尺寸</title>
+    <script src="jquery.js"></script>
+    <link rel="stylesheet" type="text/css" href="main.css"/>
+</head>
+<body>
+<div>
+        <!
+        --width()和height()方法获取并设置尺寸，而不需要填充，边框和边距。
+
+        innerWidth()和innerHeight()方法也包括填充。
+
+        outerWidth()和outerHeight()方法包括填充和边框。
+        -->
+        <img src="1.png"/><br/>
+        <div id="box"></div><br/>
+        <button id="btn">带边距的外形尺寸的查看</button>
+
+</div>
+
+<script type="text/javascript">
+    $("#btn").click(function () {
+        $("img").css({"width":"500px","height":"500px","padding":"10px","margin":"10px","border":"2px solid black"});
+        var txt = "";
+        txt += "width: " + $("img").width() + " ";
+        txt += "height: " + $("img").height()+" " + "border: " + "2px"+" " + "padding: " + "10px"+" " + "margin: " + "10px"+ "<br/>"+"<br/>";
+        txt += "innerWidth: " + $("img").innerWidth() + "  ";
+        txt += "innerHeight: " + $("img").innerHeight() + "<br/>";
+        txt += "outerWidth: " + $("img").outerWidth() + "  ";
+        txt += "outerHeight: " + $("img").outerHeight();
+        $("#box").html(txt);
+    });
+
+
+
+
+</script>
+</body>
+</html>

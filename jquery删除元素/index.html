@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jquery删除元素</title>
+    <script src="jquery.js"></script>
+    <link rel="stylesheet" type="text/css" href="main.css"/>
+</head>
+<body>
+<div>
+    <p id="p_">别删我。删下面的</p>
+    <p id="p1">??????????</p>
+    <button id="btn">你懂的(remove方法)</button>
+    <button id="btn1">皮？？？（empty方法）</button>
+</div>
+
+<script type="text/javascript">
+    $("#btn").click(function () {
+        $("#p_").eq(0).remove();
+    });
+    $("#btn1").click(function () {
+        $("div").empty();
+    });
+
+
+
+
+
+</script>
+</body>
+</html>

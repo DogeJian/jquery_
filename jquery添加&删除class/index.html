@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jquery添加&删除class</title>
+    <script src="jquery.js"></script>
+    <link rel="stylesheet" type="text/css" href="main.css"/>
+</head>
+<body>
+<div>
+<!--
+     添加CSS: addClass()方法为选定的元素添加一个或多个类。
+
+     删除CSS：removeClass()方法从所选元素中删除一个或多个类名。
+
+     切换CSS：toggleClass()方法在从所选元素添加/删除类之间切换，这意味着如果元素指定的类存在，则它将被删除，如果不存在，则会被添加。
+-->
+    <div id="box">第一只盒子</div>
+    <button id="btn">盘它！</button>
+    <button id="btn1">不盘了！</button>
+    <button id="btn2">togglecalss皮一下</button>
+</div>
+
+<script type="text/javascript">
+    $("#btn").click(function () {
+        $("#box").addClass("box1");
+        alert("成功为id为box的盒子添加box1的CSS样式");
+    });
+    $("#btn1").click(function () {
+        $("#box").removeClass("box1");
+        alert("成功为id为box的盒子取消box1的CSS样式");
+    });
+    $("#btn2").click(function () {
+        $("#box").toggleClass("box1");
+    });
+
+
+
+</script>
+</body>
+</html>
