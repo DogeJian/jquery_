@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jquery事件处理</title>
+    <script src="jquery.js"></script>
+    <link rel="stylesheet" type="text/css" href="main.css"/>
+</head>
+<body>
+<!--
+   鼠标事件：
+click:单击时发生。
+
+dblclick:双击元素时触发。
+
+mouseenter:当鼠标指针结束（进入）所选元素时触发。
+
+mouseleave:鼠标指针离开所选元素时触发。
+
+mouseover:当鼠标指针在所选元素上方悬停时触发。
+
+键盘事件：
+keydown:当按下键盘按键时会触发。
+
+keyup:当键盘按键被释放时会触发。
+
+表单事件：
+submit:提交表单时触发。
+
+change:当表单元素的值发生改变时触发。
+
+focus:当表单元素获得焦点时触发。
+
+blur:当表单元素失去焦点时触发。
+
+文件事件：
+ready:当DOM加载完成以后触发。
+
+resize:当浏览器窗口大小改变时触发。
+
+scroll:当用户在指定的元素中滚动滚动条时触发。
+
+on()方法用于将事件附加到所选元素
+
+使用off()方法来删除事件处理程序
+-->
+<div>
+    <h1 style="margin-left: 37%">看看时间</h1>
+    <h2 style="margin-left: 35%"></h2>
+    <h3 style="margin-left: 35%">按键盘试试~</h3>
+    <h4 style="margin-left: 35%"></h4>
+    <img src="1.jpg"/>
+    <form>
+        name:<input type="text" id="name_" value="shuaijian"><br/>
+        key:<input type="password" id="psw" value="shuaijian">
+        <input type="button" id="btn" value="submit">
+    </form>
+    <div id="box">
+        <p id="p_">
+            帅健纯洁可爱天真善良英俊潇洒玉树临风风流倜傥可爱纯洁：帅健纯洁可爱天真善良英俊潇洒玉树临风风流倜傥可爱纯洁：帅健纯洁可爱天真善良英俊潇洒玉树临风风流倜傥可爱纯洁：帅健纯洁可爱天真善良英俊潇洒玉树临风风流倜傥可爱纯洁：帅健纯洁可爱天真善良英俊潇洒玉树临风风流倜傥可爱纯洁
+        </p>
+    </div>
+    <p >滚动条滚动了<span>0</span>次</p>
+</div>
+
+<script type="text/javascript">
+    var x = 0;
+    $(function () {
+       $("img").css({"width":"300px","height":"300px","margin-left":"35%"});
+       $("#box").css({"width":"300px","height":"100px","background-color":"black","color":"white","overflow":"scroll"});
+       $("img").dblclick(function () {
+           alert("我就是帅健呀");
+       });
+       $("img").ready($("h2").html(Date()));
+
+    });
+    $("img").mouseenter(function () {
+       $("h1").html("我脑袋可不是面团捏的，双击下试试？");
+    });
+    $("img").mouseleave(function () {
+        $("h1").html("看看时间");
+    });
+    $("body").keydown(function () {
+        $("h3").remove();
+    });
+    $("body").keyup(function () {
+        $("h4").html("我出现啦");
+    });
+    $("#btn").on("click",function () {
+        alert("提交成功");
+    });
+    $("#name_").on("focus blur",function () {
+        $("#name_").val("shuaijian");
+    } );
+    $("#psw").on("change",function () {
+        $("#psw").val("shuaijian");
+    });
+    $(window).resize(function() {
+        alert("调整窗口大小");
+        $(window).off("resize");
+    });
+    $("#box").scroll(function () {
+        $("span").text(x+=1);
+    });
+
+
+
+
+</script>
+</body>
+</html>
